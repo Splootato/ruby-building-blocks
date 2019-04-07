@@ -3,6 +3,6 @@ def stock_picker(prices)
     if index != (prices.length - 1)
         price = prices[index+1..-1].max - price
     end }
-    differences.pop
-    [differences.index(differences.max), prices.index(prices[differences.index(differences.max)..-1].max)]
+    buy_day = differences.index(differences[0..-2].max)
+    [buy_day, prices.index(prices[buy_day..-1].max)]
 end
